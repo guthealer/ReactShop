@@ -23,7 +23,8 @@ function Home(props) {
 
 // `   
 const Card = styled.div`
-width: 300px;
+width: 200px;
+
 margin: 1rem;
 display: flex;
 flex-direction: column;
@@ -33,9 +34,10 @@ border-radius: 1rem;
 box-shadow: 0 0 5px 5px rgba(20,20,20,0.5);
 
 img{
-  width:auto;
-  height: 300px;
-  aspect-ratio: 2/3;
+  width:100%;
+  height:200px;
+ 
+  object-fit: contain;
   
 }
 a{
@@ -95,7 +97,7 @@ const productRatingCount = allProducts.map((product)=>product.rating.count)
 
     return (
         <div>
- <h2 style={{textAlign:'center'}}>Home</h2>
+ <h2 style={{textAlign:'center'}}>All Products</h2>
 
 
 

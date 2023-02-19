@@ -14,11 +14,10 @@ import MenuIcon from "@mui/icons-material/Menu";
 
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button"
+import Button from "@mui/material/Button";
 import { NavLink } from "react-router-dom";
-import Cart from '@mui/icons-material/ShoppingCartOutlined';
-import {Badge,Link} from "@mui/material";
-
+import Cart from "@mui/icons-material/ShoppingCartOutlined";
+import { Badge, Link } from "@mui/material";
 
 const drawerWidth = 240;
 const navItems = ["Home", "About", "Services", "Contact"];
@@ -38,22 +37,26 @@ function DrawerAppBar(props) {
       </Typography>
       <Divider />
       <List>
-        
-          <ListItem>
+        <ListItem>
+          <NavLink to="/">
+            <Button color="success">Home</Button>
+          </NavLink>
+        </ListItem>
+        <Divider></Divider>
 
-          <NavLink to='/'>
-          <Button color="success">Home</Button>
-        
-              </NavLink>
-          </ListItem>
- <Divider></Divider>
-            
-          <ListItem>
-          <NavLink to='Electronics' ><Button color="success">Electronics</Button>
-              </NavLink>
-          </ListItem>
-          <Divider></Divider>
-        
+        <ListItem>
+          <NavLink to="Electronics">
+            <Button color="success">Electronics</Button>
+          </NavLink>
+        </ListItem>
+
+        <ListItem>
+          <NavLink to="Jewelery">
+            <Button color="success">Jewelery</Button>
+          </NavLink>
+        </ListItem>
+
+        <Divider></Divider>
       </List>
     </Box>
   );
@@ -92,21 +95,25 @@ function DrawerAppBar(props) {
             <NavLink to="Electronics">
               <Button sx={{ color: "white", mr: 4 }}>Electronics</Button>
             </NavLink>
+
+            <NavLink to="Jewelery">
+              <Button sx={{ color: "white", mr: 4 }}>Jewelary</Button>
+            </NavLink>
           </Box>
 
+          <Box sx={{ display: { xs: "block", sm: "block" }, flexGrow: 0 }}>
+            <NavLink to="SignUp">
+              <Button sx={{ color: "white", mr: 4 }}>SignUp</Button>
+            </NavLink>
 
-          <NavLink to="SignUp">
-            <Button sx={{ color: "white", mr: 4 }}>SignUp</Button>
-          </NavLink>
+            <NavLink to="SignIn">
+              <Button sx={{ color: "white", mr: 4 }}>SignIn</Button>
+            </NavLink>
 
-          <NavLink to="SignIn">
-            <Button sx={{ color: "white", mr: 4 }}>SignIn</Button>
-          </NavLink>
-
-          <Badge color="secondary" badgeContent={0} showZero>
-            <Cart />
-          </Badge>
-        
+            <Badge color="secondary" badgeContent={0} showZero>
+              <Cart />
+            </Badge>
+          </Box>
         </Toolbar>
       </AppBar>
 

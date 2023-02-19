@@ -11,6 +11,7 @@ const Container = styled.div`
          display: grid;
          grid-template-columns: auto auto;
          place-items: center;
+         margin: 1rem;
          @media screen and (max-width:700px){
               grid-template-columns: auto;
          }
@@ -38,9 +39,10 @@ function ProductPage(props) {
 
                     <ProductInfo>
                             <h2>{state.user.userObj.title}</h2>
-                            <p>{state.user.userObj.description}</p>
                             <h3>{state.user.userObj.price}$</h3>
                             <Button variant='contained' color='success'>Add to Cart</Button>
+                            <p>{state.user.userObj.description}</p>
+                          
                     </ProductInfo>
 
                </Container>

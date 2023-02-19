@@ -13,12 +13,15 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+import { NavLink } from 'react-router-dom';
+import { Paper } from '@mui/material';
+
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        MyStore
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -40,7 +43,8 @@ export default function SignIn() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
+      
+      <Container component="main" maxWidth="sm" >
         <CssBaseline />
         <Box
           sx={{
@@ -96,15 +100,16 @@ export default function SignIn() {
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
+              <NavLink to="/SignUp">
+            Already have an account? Sign in
+          </NavLink>
               </Grid>
             </Grid>
           </Box>
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
+      
     </ThemeProvider>
   );
 }

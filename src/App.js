@@ -11,6 +11,7 @@ import ProductPage from './pages/ProductPage';
 import Navigation from './components/Navigation';
 import Clothes from './pages/Clothes'
 import Electronics from './pages/Electronics'
+import Jewelery from './pages/Jewelary';
 import SignUp from './pages/SignUp';
 import SignIn from './pages/SignIn';
 import DrawerAppBar from './components/Navbar';
@@ -62,6 +63,7 @@ console.log(user)
   <Route exact path='/' element={<Home/>}/>
   <Route path='/ProductPage' element={<ProductPage/>}/> 
   <Route path='/Electronics' element={<Electronics/>}/>
+  <Route path='/Jewelery' element={<Jewelery/>}/>
   <Route path='/SignUp' element={<SignUp/>}/>
   <Route path='/SignIn' element={<SignIn/>}/>
  

@@ -12,7 +12,7 @@ import { Button } from '@mui/material';
 
 
 const Card = styled.div`
-width: 300px;
+width: 200px;
 margin: 1rem;
 display: flex;
 flex-direction: column;
@@ -22,19 +22,21 @@ border-radius: 1rem;
 box-shadow: 0 0 5px 5px rgba(20,20,20,0.5);
 
 img{
- width:auto;
- height: 300px;
- aspect-ratio: 2/3;
+  width:100%;
+  height:200px;
+  
+  object-fit: contain;
  
 }
 `;
 
 const Container  = styled.div`
-display: grid;
-grid-template-columns: auto auto auto;
-place-items: center;
+display:flex;
+flex-wrap: wrap;
+justify-content: flex-start;
+
 @media screen and (max-width:700px){
-    grid-template-columns: auto;
+  justify-content: center;
 }
 `
 
