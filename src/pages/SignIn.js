@@ -13,8 +13,12 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-import { NavLink } from 'react-router-dom';
-import { Paper } from '@mui/material';
+import { Navigate, NavLink, redirect, useNavigate, } from 'react-router-dom';
+
+
+
+import axios from 'axios';
+import { useState,useEffect } from 'react';
 
 function Copyright(props) {
   return (
@@ -31,19 +35,91 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-export default function SignIn() {
+export default function SignIn(props) {
+
+  const[username,setUsername]=useState()
+  const[password,setPassword]=useState()
+ const navigate = useNavigate()
+
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+    setUsername(data.get('email'))
+    setPassword(data.get('password'))
     console.log({
       email: data.get('email'),
       password: data.get('password'),
     });
+    fetchData();
+   
   };
 
+
+//    const username= kminchelle
+//  const password=0lelplR
+
+ 
+
+const msg = ''
+
+function fetchData(){
+
+fetch('https://dummyjson.com/auth/login', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    
+    username:username,
+    password: password,
+    // expiresInMins: 60, // optional
+  })
+})
+.then(res => res.json())
+.then(((res)=>{console.log(res);
+                console.log(res.message);
+               userInfo(res);
+               Auth(res.message);
+                 }))
+
+
+
+}
+
+function userInfo(res){
+  localStorage.setItem('username',res.username)
+  localStorage.setItem('email',res.email)
+  localStorage.setItem('firstName',res.firstName)
+  localStorage.setItem('lastName',res.lastName)
+}
+
+
+function Auth(msg){
+   if(msg=='Invalid credentials'){
+    alert('wrong');
+   }
+   else{
+    props.setlogged(true)
+    localStorage.setItem('log','true')
+
+    
+     navigate('/')
+   }
+}
+
+
+useEffect(()=>{
+  // ()=>  navigate('/')
+  // fetchData();
+
+},[])
+
+
   return (
+
+  
     <ThemeProvider theme={theme}>
-      
+    
       <Container component="main" maxWidth="sm" >
         <CssBaseline />
         <Box
@@ -101,7 +177,7 @@ export default function SignIn() {
               </Grid>
               <Grid item>
               <NavLink to="/SignUp">
-            Already have an account? Sign in
+           Don't have account ,Sign Up
           </NavLink>
               </Grid>
             </Grid>
@@ -109,7 +185,8 @@ export default function SignIn() {
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
-      
+      <Typography>  username: kminchelle
+  // password: 0lelplR</Typography>
     </ThemeProvider>
   );
 }

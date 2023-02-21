@@ -30,14 +30,62 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignUp() {
+
+      const[email,setEmail]=React.useState()
+      const[password,setPassword]=React.useState()
+      const[firstName,setFirstname]=React.useState()
+      const[lastName,setLastname]=React.useState()
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+
+    setEmail(data.get('email'));
+    setPassword(data.get('password'))
+    setFirstname(data.get('firstName'))
+    setLastname(data.get('lastName'))
+
+    signup(email,password,firstName,lastName)
+    
     console.log({
       email: data.get('email'),
       password: data.get('password'),
+      firstname:data.get('firstName'),
+      lastname:data.get('lastName'),
     });
   };
+
+
+  function signup(){
+    fetch('https://fakestoreapi.com/users',{
+            method:"POST",
+            body:JSON.stringify(
+                {
+                    email:email,
+                    username:'username',
+                    password:password,
+                    name:{
+                        firstname:firstName,
+                        lastname:lastName
+                    },
+                    address:{
+                        city:'kilcoole',
+                        street:'7835 new road',
+                        number:3,
+                        zipcode:'12926-3874',
+                        geolocation:{
+                            lat:'-37.3159',
+                            long:'81.1496'
+                        }
+                    },
+                    phone:'1-570-236-7033'
+                }
+            )
+        })
+            .then(res=>res.json())
+            .then(json=>console.log(json))
+  }
+
 
   return (
     <ThemeProvider theme={theme}>

@@ -13,13 +13,28 @@ function Home(props) {
     const [allProducts, setallProducts] = useState([]);
    const [loader,setloader]=useState(false)
 
+  
+  //  fetch('https://dummyjson.com/auth/login', {
+  //   method: 'POST',
+  //   headers: { 'Content-Type': 'application/json' },
+  //   body: JSON.stringify({
+      
+  //     username: 'kminchelle',
+  //     password: '0lelplR',
+  //     // expiresInMins: 60, // optional
+  //   })
+  // })
+  // .then(res => res.json())
+  // .then(console.log);
+
+
 
 //  const Button = styled.button` 
 //  width: 100%;
  
 //  font-size: 1.6rem;
 //  border-radius: 10px;
-//  bac
+//  
 
 // `   
 const Card = styled.div`

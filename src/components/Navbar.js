@@ -18,6 +18,10 @@ import Button from "@mui/material/Button";
 import { NavLink } from "react-router-dom";
 import Cart from "@mui/icons-material/ShoppingCartOutlined";
 import { Badge, Link } from "@mui/material";
+import { Avatar ,Stack} from "@mui/material";
+import Account from "../pages/Account";
+
+
 
 const drawerWidth = 240;
 const navItems = ["Home", "About", "Services", "Contact"];
@@ -101,18 +105,32 @@ function DrawerAppBar(props) {
             </NavLink>
           </Box>
 
-          <Box sx={{ display: { xs: "block", sm: "block" }, flexGrow: 0 }}>
-            <NavLink to="SignUp">
-              <Button sx={{ color: "white", mr: 4 }}>SignUp</Button>
-            </NavLink>
+          <Box sx={{ display: { xs: "flex", sm: "flex",justifyContent:'space-between',alignItems:'center' }, flexGrow: 1 }}>
+            
 
+{/*            
             <NavLink to="SignIn">
               <Button sx={{ color: "white", mr: 4 }}>SignIn</Button>
-            </NavLink>
+            </NavLink> */}
+         
+           <Box sx={{flexGrow:1,display:'flex',justifyContent:'space-around'}}>
 
-            <Badge color="secondary" badgeContent={0} showZero>
+            {props.logged?
+            <NavLink to="Account"><Button sx={{ color: "white", mr: 4 }}>Account</Button>
+            </NavLink>
+            :
+             <NavLink to="SignIn">
+              <Button sx={{ color: "white", mr: 4 }}>SignIn</Button>
+            </NavLink>}
+
+         
+        
+       
+           
+            <Badge color="secondary" badgeContent={0} showZero >
               <Cart />
             </Badge>
+            </Box>
           </Box>
         </Toolbar>
       </AppBar>
