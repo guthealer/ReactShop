@@ -42,20 +42,22 @@ function DrawerAppBar(props) {
       <Divider />
       <List>
         <ListItem>
-          <NavLink to="/">
-            <Button color="success">Home</Button>
+          <NavLink to="/" style={{width:'100%'}}>
+            <Button color="success" width='100%' >Home</Button>
           </NavLink>
         </ListItem>
         <Divider></Divider>
 
         <ListItem>
-          <NavLink to="Electronics">
+          <NavLink to="Electronics"  style={{width:'100%'}}>
             <Button color="success">Electronics</Button>
           </NavLink>
         </ListItem>
 
+        <Divider></Divider>
+
         <ListItem>
-          <NavLink to="Jewelery">
+          <NavLink to="Jewelery"  style={{width:'100%'}}>
             <Button color="success">Jewelery</Button>
           </NavLink>
         </ListItem>
@@ -87,7 +89,7 @@ function DrawerAppBar(props) {
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+            sx={{ flexGrow: 1, display: { xs: "block", sm: "block" } }}
           >
             MyStore
           </Typography>
@@ -113,7 +115,7 @@ function DrawerAppBar(props) {
               <Button sx={{ color: "white", mr: 4 }}>SignIn</Button>
             </NavLink> */}
          
-           <Box sx={{flexGrow:1,display:'flex',justifyContent:'space-around'}}>
+           <Box sx={{flexGrow:1,display:'flex',justifyContent:'flex-end',flexDirection:"row"}}>
 
             {props.logged?
             <NavLink to="Account"><Button sx={{ color: "white", mr: 4 }}>Account</Button>

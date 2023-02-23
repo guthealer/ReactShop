@@ -71,7 +71,7 @@ export default function Account(props) {
         <ListItemText primary={<Button>logout</Button>} secondary="" onClick={logout}/>
       
       </ListItem>
-
+{/* 
       <ListItem>
         <ListItemAvatar>
           <Avatar>
@@ -79,7 +79,7 @@ export default function Account(props) {
           </Avatar>
         </ListItemAvatar>
         <ListItemText primary="Orders" secondary="J" />
-      </ListItem>
+      </ListItem> */}
     </List>
     </Container>
   );

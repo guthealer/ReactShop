@@ -8,7 +8,7 @@ import Products from './Products';
 import Home from './pages/Home';
 import styled from 'styled-components';
 import ProductPage from './pages/ProductPage';
-import Navigation from './components/Navigation';
+
 import Clothes from './pages/Clothes'
 import Electronics from './pages/Electronics'
 import Jewelery from './pages/Jewelary';

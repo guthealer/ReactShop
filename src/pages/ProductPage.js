@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Button } from '@mui/material';
+import { Badge, Button } from '@mui/material';
+import { Rating } from '@mui/material';
 
 import { useLocation } from 'react-router';
 
@@ -39,6 +40,9 @@ function ProductPage(props) {
 
                     <ProductInfo>
                             <h2>{state.user.userObj.title}</h2>
+                            <Badge badgeContent={state.user.userObj.rating.count} max={10000} color='success'>
+                            <Rating name="read-only" value={state.user.userObj.rating.rate} readOnly color='success'   precision={0.5} sx={{color:'green'}}/>
+                            </Badge>
                             <h3>{state.user.userObj.price}$</h3>
                             <Button variant='contained' color='success'>Add to Cart</Button>
                             <p>{state.user.userObj.description}</p>

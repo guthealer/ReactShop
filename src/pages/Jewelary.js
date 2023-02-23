@@ -13,14 +13,20 @@ import { Button } from '@mui/material';
 
 const Card = styled.div`
 width: 200px;
-margin: 1rem;
+margin: 0.5rem;
 display: flex;
 flex-direction: column;
 justify-content:space-between;
 
-padding: 1rem;
+padding:1rem;
 border-radius: 1rem;
-box-shadow: 0 0 5px 5px rgba(20,20,20,0.5);
+box-shadow: 0 0 5px 5px rgba(200,200,200,0.5);
+
+@media screen and  (max-width:400px){
+      width: 100%;
+     
+    
+   }
 
 img{
   width:100%;
