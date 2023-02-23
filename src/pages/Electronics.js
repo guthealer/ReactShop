@@ -21,7 +21,7 @@ padding:1rem;
 border-radius: 1rem;
 box-shadow: 0 0 5px 5px rgba(200,200,200,0.5);
 
-@media screen and  (max-width:400px){
+@media screen and  (max-width:480px){
       width: 100%;
      
     
